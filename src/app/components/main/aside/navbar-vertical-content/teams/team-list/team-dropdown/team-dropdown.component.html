@@ -1,0 +1,11 @@
+<div class="tom-select-custom">
+  <select class="js-select form-select form-select-sm fs-6" autocomplete="off"
+        data-hs-tom-select-options='{
+          "placeholder": "Select...",
+          "hideSearch": true,
+          "searchInDropdown":false
+        }'
+        id="{{id}}">
+    <option value={{team.teamId}} *ngFor="let team of subTeams">{{team.team}}</option>
+  </select>
+</div>

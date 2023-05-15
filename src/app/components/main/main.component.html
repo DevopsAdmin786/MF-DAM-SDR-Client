@@ -1,0 +1,75 @@
+<main id="content" role="main" class="main">
+  <app-aside></app-aside>
+  <!-- Content -->
+<div class="content container-fluid pt-3 px-0">
+  <!-- Content header -->
+  <div class="page-header mb-3 pb-0 px-4 border-bottom-0">
+    <div class="row align-items-center">
+      <div class="col">
+        <h3 class="page-header-title text-black-50 mb-0">Select SmartDesign Template</h3>
+      </div>
+      <!-- End Col -->
+      <div class="col-auto">
+
+      </div>
+      <!-- End Col -->
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- end: Content header -->
+
+  <div class="mx-5">
+    <div class="row align-items-center bg-light mb-5 py-2 py-md-1 rounded-1">
+      <div class="col-12 col-sm">
+        <h5 class="mb-0 text-body">Showing 12 Templates</h5>
+      </div>
+
+
+      <div class="col-12 col-sm-auto d-flex justify-content-center align-items-center flex-wrap pe-2 pt-2 py-sm-0">
+        <span>Sort by:</span>
+        <!-- listing tabs -->
+          <ul class="nav nav-segment align-items-center flex-wrap" id="profileTeamsTab" role="tablist">
+            <!-- <li class="nav-item me-1">
+              <a class="nav-link text-body pe-0">Sort by:</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" id="list-tab" data-bs-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">
+                <i class="bi-view-list"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="grid-tab" data-bs-toggle="tab" href="#grid" role="tab" aria-controls="grid" aria-selected="true">
+                <i class="bi-grid"></i>
+              </a>
+            </li>
+            <li class="nav-item ms-md-3 ms-2">
+              <!-- Select -->
+            <div class="tom-select-custom">
+              <!-- <select class="js-select form-select form-select-sm tomselected" style="width:140px" autocomplete="off" data-hs-tom-select-options="{
+                      &quot;placeholder&quot;: &quot;Select...&quot;,
+                      &quot;hideSearch&quot;: true,
+                      &quot;searchInDropdown&quot;:false
+                    }" id="tomselect-3" tabindex="-1" hidden="hidden"><option value="4" selected="true">Newest</option>
+                <option value="">Select...</option>
+
+                <option value="1">Latest</option>
+                <option value="3">Popular</option>
+              </select>
+              <div class="ts-control js-select form-select form-select-sm single plugin-change_listener plugin-hs_smart_position input-hidden" style="width: 140px;"><div class="items ts-input full has-items"><div data-value="4" class="item">Newest</div></div><div class="tom-select-custom"><div class="ts-dropdown single js-select form-select form-select-sm plugin-change_listener plugin-hs_smart_position" style="display: none; visibility: visible; opacity: 1;"><div role="listbox" id="tomselect-3-ts-dropdown" tabindex="-1" class="ts-dropdown-content"><div data-selectable="" data-value="4" class="option selected active" role="option" id="tomselect-3-opt-1" aria-selected="true">Newest</div><div data-selectable="" data-value="1" class="option" role="option" id="tomselect-3-opt-2">Latest</div><div data-selectable="" data-value="3" class="option" role="option" id="tomselect-3-opt-3">Popular</div></div></div></div></div> -->
+
+            </div>
+            <!-- End Select -->
+            </li>
+          </ul>
+          <!-- End tabs -->
+    </div>
+
+    </div>
+
+    <app-projects></app-projects>
+
+  </div>
+
+</div>
+  <app-footer></app-footer>
+</main>

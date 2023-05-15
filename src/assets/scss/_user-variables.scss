@@ -1,0 +1,28 @@
+// user-variables.scss
+// Use this to overwrite Bootstrap and Front variables
+//
+
+
+// Example of a variable override to change Front's primary color and font size
+// Remove the "//" to comment it in and see it in action!
+$sdr-primary-color: #FF7800;
+$sdr-navbar-width: 19.25rem;
+$form-check-label-highlighter-border-color:rgba(231, 234, 243, 0.9);
+$body-color:#646464;
+$footer-height: 2rem;
+
+$navbar-brand-default-width: 10.5rem;
+
+// font and font size
+$sdr-font-family: 'Montserrat', sans-serif;
+$sdr-font-size-base: .865rem;
+
+
+
+
+// The color of the SVG loader should be modified manually.
+// See assets/svg/components/circle-preloader.svg
+$primary: $sdr-primary-color;
+$font-family-base: $sdr-font-family;
+$font-size-base: $sdr-font-size-base;
+$navbar-brand-width: $sdr-navbar-width;

@@ -1,0 +1,50 @@
+<span class="w-100 border"></span>
+<div class="nav-item">
+  <a class="nav-link fw-500 dropdown-toggle px-0" href="#{{item.value}}" role="button" data-bs-toggle="collapse"
+    attr.data-bs-target=#{{item.value}} attr.aria-controls={{item.value}}>
+    <span class="nav-link-title fw-500">{{item.label}} <span *ngIf="item.inMeasure">(in {{item.inMeasure}})</span></span>
+  </a>
+
+
+  <div id={{item.value}} class="nav-collapse collapse" attr.data-bs-parent="#{{item.value}}">
+    <div class="col w-70 mb-3 pt-2">
+      <div _ngcontent-jsp-c31="" class="row col-sm-divider">
+        <div *ngIf="item.selectall" class="col-auto"><a href="javascript:;" class="link-primary fs-6">Select
+            All</a></div>
+        <div *ngIf="item.clearall" class="col-sm text-start"><a href="javascript:;" class="link-primary fs-6">Clear
+            All</a></div>
+      </div>
+    </div>
+    <div class="col">
+      <!-- List Group -->
+      <ul class="list-group">
+        <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6"
+          *ngFor="let option of item.optionsList">
+          <input class="form-check-input me-2" type="checkbox" id={{option.value}}>
+          <label for="{{option.value}}" class="cursor">{{option.label}}
+            <span *ngIf="item.inMeasure == 'inches'; else elseMeasureBlock">
+              ({{option.height}}"x{{option.width}}")
+            </span>
+            <ng-template #elseMeasureBlock>
+              ({{option.height}}x{{option.width}})
+            </ng-template>
+          </label>
+          <i *ngIf="option.infoShow" class="bi-info-circle-fill text-primary ms-1 cursor-pointer"
+            data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" title="Includes"
+            data-bs-content="
+            <strong>Print (in inches)</strong><br>
+            Full page (7” x 9.5”) <br>
+            Half page vertical (4.583”X7”)<br><br>
+            <strong>Digital (in pixels)</strong><br>
+            Billboard (970x250)<br>
+            Smartphone Banner (300x50)<br>
+            Leaderboard (728x90)<br>
+            Portrait (300x1050)<br>
+            "></i>
+          <span *ngIf="option.showCount" class="ms-auto text-black-50">{{option.count}}</span>
+        </li>
+      </ul>
+      <!-- End List Group -->
+    </div>
+  </div>
+</div>

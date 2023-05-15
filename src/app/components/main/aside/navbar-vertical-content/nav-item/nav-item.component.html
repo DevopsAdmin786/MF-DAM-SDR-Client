@@ -1,0 +1,14 @@
+<div class="nav-item">
+  <div class="nav-link col d-flex justify-content-between align-items-center">
+    <div>
+      <strong>{{filter.label}}</strong>
+    </div>
+    <div _ngcontent-jsp-c31="" class="row col-sm-divider">
+      <div *ngIf="filter.selectall" class="col-auto fw-500"><a href="javascript:;" class="link-primary fs-6">Select
+          All</a></div>
+      <div *ngIf="filter.clearall" class="col-sm text-start"><a href="javascript:;"
+          class="link-primary fs-6 fw-500">Clear All</a></div>
+    </div>
+  </div>
+</div>
+<app-filter *ngFor="let item of filter.filterList" [item]="item" style="order: {{item.position}};"></app-filter>

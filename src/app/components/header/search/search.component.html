@@ -1,0 +1,48 @@
+<div class="dropdown ms-2">
+  <div class="d-none d-lg-block">
+    <div class="input-group input-group-merge input-group-borderless input-group-light navbar-input-group">
+      <div class="input-group-prepend input-group-text">
+        <i class="bi-search text-primary"></i>
+      </div>
+
+      <input type="search" class="js-form-search form-control" placeholder="Search Templates" aria-label="Search in front" data-hs-form-search-options='{
+             "clearIcon": "#clearSearchResultsIcon",
+             "toggleIconOnFocus": true,
+             "activeClass": "focus"
+           }'>
+      <a class="input-group-append input-group-text" href="javascript:;">
+        <i id="clearSearchResultsIcon" class="bi-x-lg text-primary" style="display: none;"></i>
+      </a>
+    </div>
+  </div>
+
+  <button class="js-form-search js-form-search-mobile-toggle btn btn-ghost-secondary btn-icon rounded-circle d-lg-none" type="button"
+          data-hs-form-search-options='{
+             "clearIcon": "#clearSearchResultsIcon",
+             "dropMenuElement": "#searchDropdownMenu",
+             "dropMenuOffset": 10,
+             "toggleIconOnFocus": true,
+             "activeClass": "focus"
+           }'>
+    <i class="bi-search text-primary"></i>
+  </button>
+    <!-- Card Search Content -->
+    <div id="searchDropdownMenu" class="hs-form-search-menu-content dropdown-menu dropdown-menu-form-search navbar-dropdown-menu-borderless" style="margin-top: -0.37rem;">
+      <!-- Body -->
+      <div class="card-body py-1 px-3">
+        <div class="d-lg-none">
+          <div class="input-group input-group-merge navbar-input-group mb-0">
+            <div class="input-group-prepend input-group-text">
+              <i class="bi-search"></i>
+            </div>
+
+            <input type="search" class="form-control" placeholder="Search" aria-label="Search in front">
+            <a class="input-group-append input-group-text" href="javascript:;">
+              <i class="bi-x-lg"></i>
+            </a>
+          </div>
+        </div>
+    </div>
+    </div>
+    <!-- End Card Search Content -->
+</div>

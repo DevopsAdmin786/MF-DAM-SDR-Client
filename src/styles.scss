@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap-icons/font/bootstrap-icons";
+@import "node_modules/tom-select/dist/css/tom-select.bootstrap5";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css");
+@import "assets/css/theme.min";
+// @import "assets/css/theme-dark.min"; //only activate if you for dark theme
+
+*[data-hs-theme-appearance="dark"]{
+  display: none !important;
+}
+
+.ts-control{
+  padding: 0.5rem 2.25rem 0.5rem 1rem !important;
+}
+
+.focus .ts-control{
+  box-shadow: none;
+}
+
+.ts-control .item{
+  font-weight: 500;
+}

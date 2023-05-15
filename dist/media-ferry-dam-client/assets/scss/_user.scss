@@ -1,0 +1,191 @@
+/*------------------------------------
+  File for your custom SCSS style
+------------------------------------*/
+::-webkit-scrollbar {
+  width: 0.6125rem;
+  height: 0.6125rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-bg-color;
+}
+.nav-vertical.nav-pills .nav-link {
+  padding: 0 !important;
+  // font-weight: 600;
+  color: $body-color;
+  margin-bottom: 0;
+  height: 36px;
+}
+.nav-pills .nav-link:hover {
+  background-color: transparent;
+}
+.nav-vertical.nav-pills .nav-collapse {
+  padding-left: 0;
+}
+.nav-vertical.nav-pills .nav-collapse::before {
+  display: none;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: inherit;
+}
+.list-group {
+  margin-bottom: 1rem;
+}
+.list-group-item {
+  color: $navbar-light-color;
+}
+.navbar.navbar-container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.navbar-vertical-fixed .navbar-vertical-footer-offset {
+  height: 100%;
+  padding-bottom: 0.25rem;
+}
+.btn-link {
+  text-decoration: underline;
+}
+
+.dropdown-toggle::after {
+  background-image: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%23FF7800' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.72,15.78a.75.75,0,0,1-.53.22h-.38a.77.77,0,0,1-.53-.22L6.15,10.64a.5.5,0,0,1,0-.71l.71-.71a.49.49,0,0,1,.7,0L12,13.67l4.44-4.45a.5.5,0,0,1,.71,0l.7.71a.5.5,0,0,1,0,.71Z'/%3e%3c/svg%3e");
+}
+.bi-heart-fill::before {
+  vertical-align: -0.2em;
+}
+.card-img-h {
+  height: 194px;
+}
+.card-img-h .img-fluid {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.list-img-h {
+  width: 100px;
+  height: 50px;
+}
+.list-img-h .img-fluid {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.cusbtn {
+  width: 1.595rem;
+  height: 1.595rem;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.rStar.bi-star-fill,
+.rStar.bi-star-half {
+  color: $primary;
+}
+.page-item .page-link {
+  color: $primary;
+  font-weight: 600;
+  min-width: 2rem;
+  padding: 0.275rem 0.45rem;
+  box-shadow: none;
+}
+.page-item.active .page-link,
+.page-item .page-link:hover,
+.page-item .page-link:active,
+.page-item .page-link:focus {
+  color: $body-color;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: $primary;
+  box-shadow: none;
+}
+.nav-segment .nav-link {
+  color: $primary;
+}
+.nav-segment .nav-link.active {
+  color: $nav-segment-link-active-bg-color;
+  background-color: $body-color;
+}
+.popover-header {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+.popover-body {
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem 0.8rem;
+}
+.btn-close {
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF7800'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+    center/1em auto no-repeat;
+}
+.paginationjs .paginationjs-pages {
+  float: right !important;
+}
+.fw-bold {
+  font-weight: 600 !important;
+}
+.nav-icon {
+  -ms-flex: 0 0 1.46rem;
+  flex: 0 0 1.46rem;
+}
+.nav-vertical.nav-pills .nav-collapse .nav-item .nav-link[aria-expanded]:hover,
+.nav-vertical.nav-pills .nav-collapse .nav-link:hover,
+.nav-vertical.nav-pills .nav-collapse .nav-link:active,
+.nav-vertical.nav-pills .nav-link.active {
+  color: $primary;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.right-container {
+  position: relative;
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.list-min-width {
+  max-width: 100%;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.temp-name {
+  max-width: 385px;
+}
+#searchDropdownMenu {
+  position: fixed;
+  top: 0 !important;
+  left: 0;
+  height: auto;
+  margin-top: 0;
+}
+.ts-input .item {
+  font-weight: 500;
+}
+.navbar-vertical-aside .navbar-brand{
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+.fw-500{
+  font-weight: 500 !important;
+}
+@media (min-width: 1200px) {
+  .navbar-aside-toggler {
+    opacity: 0 !important;
+    display: none;
+  }
+  .navbar-input-group {
+    min-width: 32rem;
+  }
+}
+
+@media (max-width: 358px) {
+  .navbar-brand-logo {
+      min-width: 7.5rem;
+      max-width: 7.5rem;
+  }
+}

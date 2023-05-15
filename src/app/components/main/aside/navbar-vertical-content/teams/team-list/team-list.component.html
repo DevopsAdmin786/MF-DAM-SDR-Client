@@ -1,0 +1,10 @@
+<!-- Signed in team -->
+<div class="col mb-3" *ngIf="teamTree.length">
+  <label class="mb-1 level1-dd">{{selectedTeam.sitLabel}}</label>
+  <app-team-dropdown [subTeams]=teamTree [id]="'sit'"></app-team-dropdown>
+</div>
+<!-- Client -->
+<div class="col mb-3" *ngIf=" teamTree.length && teamTree[0].teams.length > 1">
+  <label class="mb-1 level2-dd">{{selectedTeam.aftLabel}}</label>
+  <app-team-dropdown [subTeams]=teamTree[0].teams [id]="'aft'"></app-team-dropdown>
+</div>

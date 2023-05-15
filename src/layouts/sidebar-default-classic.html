@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Default Sidebar (Classic) | Front - Admin &amp; Dashboard Template</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- CSS Front Template -->
+
+  <link rel="preload" href="../assets/css/theme.min.css" data-hs-appearance="default" as="style">
+  <link rel="preload" href="../assets/css/theme-dark.min.css" data-hs-appearance="dark" as="style">
+
+  <style data-hs-appearance-onload-styles>
+    *
+    {
+      transition: unset !important;
+    }
+
+    body
+    {
+      opacity: 0;
+    }
+  </style>
+
+  <script>
+            window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/index.html","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"mini"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
+            window.hs_config.gulpRGBA = (p1) => {
+  const options = p1.split(',')
+  const hex = options[0].toString()
+  const transparent = options[1].toString()
+
+  var c;
+  if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+    c= hex.substring(1).split('');
+    if(c.length== 3){
+      c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c= '0x'+c.join('');
+    return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',' + transparent + ')';
+  }
+  throw new Error('Bad Hex');
+}
+            window.hs_config.gulpDarken = (p1) => {
+  const options = p1.split(',')
+
+  let col = options[0].toString()
+  let amt = -parseInt(options[1])
+  var usePound = false
+
+  if (col[0] == "#") {
+    col = col.slice(1)
+    usePound = true
+  }
+  var num = parseInt(col, 16)
+  var r = (num >> 16) + amt
+  if (r > 255) {
+    r = 255
+  } else if (r < 0) {
+    r = 0
+  }
+  var b = ((num >> 8) & 0x00FF) + amt
+  if (b > 255) {
+    b = 255
+  } else if (b < 0) {
+    b = 0
+  }
+  var g = (num & 0x0000FF) + amt
+  if (g > 255) {
+    g = 255
+  } else if (g < 0) {
+    g = 0
+  }
+  return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16)
+}
+            window.hs_config.gulpLighten = (p1) => {
+  const options = p1.split(',')
+
+  let col = options[0].toString()
+  let amt = parseInt(options[1])
+  var usePound = false
+
+  if (col[0] == "#") {
+    col = col.slice(1)
+    usePound = true
+  }
+  var num = parseInt(col, 16)
+  var r = (num >> 16) + amt
+  if (r > 255) {
+    r = 255
+  } else if (r < 0) {
+    r = 0
+  }
+  var b = ((num >> 8) & 0x00FF) + amt
+  if (b > 255) {
+    b = 255
+  } else if (b < 0) {
+    b = 0
+  }
+  var g = (num & 0x0000FF) + amt
+  if (g > 255) {
+    g = 255
+  } else if (g < 0) {
+    g = 0
+  }
+  return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16)
+}
+            </script>
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
+
+  <script src="../assets/js/hs.theme-appearance.js"></script>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main" class="main">
+    <!-- Navbar Vertical -->
+    <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered bg-white  ">
+      <div class="navbar-vertical-container">
+        <div class="navbar-vertical-footer-offset">
+          <!-- Logo -->
+
+          <a class="navbar-brand px-sm-2" href="../index.html" aria-label="Front">
+            <img class="navbar-brand-logo" src="../assets/img/SD_logo.png" alt="Logo" data-hs-theme-appearance="default">
+            <img class="navbar-brand-logo" src="../assets/img/SD_logo.png" alt="Logo" data-hs-theme-appearance="dark">
+            <img class="navbar-brand-logo-mini" src="../assets/img/SD_logo.png" alt="Logo" data-hs-theme-appearance="default">
+            <img class="navbar-brand-logo-mini" src="../assets/img/SD_logo.png" alt="Logo" data-hs-theme-appearance="dark">
+          </a>
+
+          <!-- End Logo -->
+
+          <!-- Navbar Vertical Toggle -->
+          <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler">
+            <i class="bi-arrow-bar-left navbar-toggler-short-align" data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-bs-toggle="tooltip" data-bs-placement="right" title="Collapse"></i>
+            <i class="bi-arrow-bar-right navbar-toggler-full-align" data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-bs-toggle="tooltip" data-bs-placement="right" title="Expand"></i>
+          </button>
+
+          <!-- End Navbar Vertical Toggle -->
+
+          <!-- Content -->
+          <div class="navbar-vertical-content">
+            <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
+              <!-- Collapse -->
+              <div class="nav-item">
+                <div class="col d-flex justify-content-between align-items-center">
+                  <strong>Filters</strong>
+                  <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                </div>
+              </div>
+              <span class="w-100 border mb-3"></span>
+              <div class="nav-item">
+                <div class="col mb-3">
+                  <label class="fw-semibold mb-1">Signed in team</label>
+                  <!-- Select -->
+                  <div class="tom-select-custom">
+                    <select class="js-select form-select form-select-sm fs-6" autocomplete="off" data-hs-tom-select-options='{
+                            "placeholder": "Select...",
+                            "hideSearch": true,
+                            "searchInDropdown":false
+                          }'>
+                      <option value="">Select...</option>
+                      <option selected value="4">EKCS</option>
+                    </select>
+                  </div>
+                  <!-- End Select -->
+                </div>
+                <div class="col mb-3">
+                  <label class="fw-semibold mb-1">Client</label>
+                  <!-- Select -->
+                  <div class="tom-select-custom">
+                    <select class="js-select form-select form-select-sm" autocomplete="off" data-hs-tom-select-options='{
+                            "placeholder": "Select...",
+                            "hideSearch": true,
+                            "searchInDropdown":false
+                          }'>
+                      <option value="">Select...</option>
+                      <option selected value="4">National World</option>
+                      <option value="1">McClatchy</option>
+                      <option value="3">Magnet</option>
+                      <option value="5">Agent 3</option>
+                    </select>
+                  </div>
+                  <!-- End Select -->
+                </div>
+              </div>
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuChannels" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuChannels" aria-controls="navbarVerticalMenuChannels">
+                  <span class="nav-link-title">Channels</span>
+                </a>
+
+                <div id="navbarVerticalMenuChannels" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Print
+                        <span class="ms-auto text-black-50">600</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox" checked>
+                        Digital
+                        <span class="ms-auto text-muted">1200</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Social Media
+                        <span class="ms-auto text-muted">700</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Video
+                        <span class="ms-auto text-muted">100</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuStyle" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuStyle" aria-controls="navbarVerticalMenuStyle">
+                  <span class="nav-link-title">Style</span>
+                </a>
+
+                <div id="navbarVerticalMenuStyle" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox" checked>
+                        Modern
+                        <span class="ms-auto text-muted">420</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Vintage
+                        <span class="ms-auto text-muted">50</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox" checked>
+                        Business
+                        <span class="ms-auto text-muted">600</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Healthy
+                        <span class="ms-auto text-muted">100</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Sporty
+                        <span class="ms-auto text-muted">150</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Clinical
+                        <span class="ms-auto text-muted">30</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Classic
+                        <span class="ms-auto text-muted">120</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Feminine
+                        <span class="ms-auto text-muted">100</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Masculine
+                        <span class="ms-auto text-muted">40</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Cartoon
+                        <span class="ms-auto text-muted">110</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Watercolor
+                        <span class="ms-auto text-muted">45</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Black and White
+                        <span class="ms-auto text-muted">75</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Lifestyle
+                        <span class="ms-auto text-muted">120</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuTheme" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuTheme" aria-controls="navbarVerticalMenuTheme">
+                  <span class="nav-link-title">Theme</span>
+                </a>
+
+                <div id="navbarVerticalMenuTheme" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Picture Led
+                        <span class="ms-auto text-black-50">1200</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Offer Led
+                        <span class="ms-auto text-muted">400</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Picture/Offer
+                        <span class="ms-auto text-muted">50</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Text only
+                        <span class="ms-auto text-muted">600</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuFormats" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuFormats" aria-controls="navbarVerticalMenuFormats">
+                  <span class="nav-link-title">Formats and Packages</span>
+                </a>
+
+                <div id="navbarVerticalMenuFormats" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Print Package 01
+                        <i class="bi-info-circle-fill text-primary ms-1 cursor-pointer" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" title="Includes" data-bs-content="
+                          <strong>Print (in inches)</strong><br>
+                          Full page (7” x 9.5”) <br>
+                          Half page vertical (4.583”X7”)<br><br>
+                          <strong>Digital (in pixels)</strong><br>
+                          Billboard (970x250)<br>
+                          Smartphone Banner (300x50)<br>
+                          Leaderboard (728x90)<br>
+                          Portrait (300x1050)<br>
+                          "></i>
+                        <span class="ms-auto text-black-50">4</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Essential Ad Product
+                        <i class="bi-info-circle-fill text-primary ms-1 cursor-pointer" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" title="Includes" data-bs-content="
+                          <strong>Print (in inches)</strong><br>
+                          Full page (7” x 9.5”) <br>
+                          Half page vertical (4.583”X7”)<br><br>
+                          <strong>Digital (in pixels)</strong><br>
+                          Billboard (970x250)<br>
+                          Smartphone Banner (300x50)<br>
+                          Leaderboard (728x90)<br>
+                          Portrait (300x1050)<br>
+                          "></i>
+                        <span class="ms-auto text-muted">6</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Essential Digital Ad Product
+                        <i class="bi-info-circle-fill text-primary ms-1 cursor-pointer" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" title="Includes" data-bs-content="
+                          <strong>Print (in inches)</strong><br>
+                          Full page (7” x 9.5”) <br>
+                          Half page vertical (4.583”X7”)<br><br>
+                          <strong>Digital (in pixels)</strong><br>
+                          Billboard (970x250)<br>
+                          Smartphone Banner (300x50)<br>
+                          Leaderboard (728x90)<br>
+                          Portrait (300x1050)<br>
+                          "></i>
+                        <span class="ms-auto text-muted">2</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Print + Digital Package
+                        <i class="bi-info-circle-fill text-primary ms-1 cursor-pointer" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" title="Includes" data-bs-content="
+                          <strong>Print (in inches)</strong><br>
+                          Full page (7” x 9.5”) <br>
+                          Half page vertical (4.583”X7”)<br><br>
+                          <strong>Digital (in pixels)</strong><br>
+                          Billboard (970x250)<br>
+                          Smartphone Banner (300x50)<br>
+                          Leaderboard (728x90)<br>
+                          Portrait (300x1050)<br>
+                          "></i>
+                        <span class="ms-auto text-muted">1</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuPrint" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPrint" aria-controls="navbarVerticalMenuPrint">
+                  <span class="nav-link-title">Print(in inches)</span>
+                </a>
+
+                <div id="navbarVerticalMenuPrint" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Full page (7" x 9.5")
+                        <span class="ms-auto text-black-50">140</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Half page vertical (4.583" x 7")
+                        <span class="ms-auto text-muted">125</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Half page horizontal (7" x 9543")
+                        <span class="ms-auto text-muted">110</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Quarter page (4.583" x 3.333")
+                        <span class="ms-auto text-muted">75</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuDigital" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuDigital" aria-controls="navbarVerticalMenuDigital">
+                  <span class="nav-link-title">Digital(in pixels)</span>
+                </a>
+
+                <div id="navbarVerticalMenuDigital" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Billboard(970 x 250)
+                        <span class="ms-auto text-black-50">140</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Smartphone Banner(300 x 50)
+                        <span class="ms-auto text-muted">125</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Leaderboard(728 x 90)
+                        <span class="ms-auto text-muted">110</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Portrait(300 x 1050)
+                        <span class="ms-auto text-muted">75</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Skyscraper(160 x 600)
+                        <span class="ms-auto text-muted">45</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Medium Rectangle(300 x 250)
+                        <span class="ms-auto text-muted">65</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuSocial" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuSocial" aria-controls="navbarVerticalMenuSocial">
+                  <span class="nav-link-title">Social Media(in pixels)</span>
+                </a>
+
+                <div id="navbarVerticalMenuSocial" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Facebook (940" x 788")
+                        <span class="ms-auto text-black-50">140</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Twitter (1024" x 512")
+                        <span class="ms-auto text-muted">125</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Twitter (640" x 360")
+                        <span class="ms-auto text-muted">110</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Instagram (1080" x 1080")
+                        <span class="ms-auto text-muted">75</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+              <div class="nav-item">
+                <a class="nav-link fw-bold dropdown-toggle px-0" href="#navbarVerticalMenuVideo" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuVideo" aria-controls="navbarVerticalMenuVideo">
+                  <span class="nav-link-title">Video</span>
+                </a>
+
+                <div id="navbarVerticalMenuVideo" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                  <div class="col w-70 mb-3 pt-2">
+                    <div class="row col-sm-divider">
+                      <div class="col-auto">
+                        <a href="javascript:;" class="link-primary fs-6">Select All</a>
+                      </div>
+                      <div class="col-sm text-start">
+                        <a href="javascript:;" class="link-primary fs-6">Clear All</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- List Group -->
+                    <ul class="list-group">
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Facebook
+                        <span class="ms-auto text-black-50">140</span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex align-items-center p-2 px-0 fs-6">
+                        <input class="form-check-input me-2" type="checkbox">
+                        Youtube
+                        <span class="ms-auto text-muted">125</span>
+                      </li>
+                    </ul>
+                    <!-- End List Group -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Collapse -->
+              <span class="w-100 border"></span>
+            </div>
+
+          </div>
+          <!-- End Content -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- End Navbar Vertical -->
+
+    <!-- Content -->
+    <div class="content container">
+      <!-- Navbar Vertical Toggle -->
+      <div class="d-flex justify-content-end">
+        <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler position-static">
+          <i class="bi-arrow-bar-left navbar-toggler-short-align" data-bs-toggle="tooltip" data-bs-placement="right" title="Collapse"></i>
+          <i class="bi-arrow-bar-right navbar-toggler-full-align" data-bs-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-bs-toggle="tooltip" data-bs-placement="right" title="Expand"></i>
+        </button>
+      </div>
+      <!-- End Navbar Vertical Toggle -->
+
+      <div class="row justify-content-lg-center pt-lg-5 pt-xl-10">
+        <div class="col-lg-9">
+          <!-- Title -->
+          <div class="text-center">
+            <img class="img-fluid mb-5" src="../assets/svg/layouts/sidebar-default-classic.svg" alt="Image Description" data-hs-theme-appearance="default" style="max-width: 15rem;">
+            <img class="img-fluid shadow-sm mb-5" src="../assets/svg/layouts-light/sidebar-default-classic.svg" alt="Image Description" data-hs-theme-appearance="dark" style="max-width: 15rem;">
+
+            <h1>Default Sidebar (Classic)</h1>
+            <p>Customize your overview page layout. Choose the one that best fits your needs.</p>
+            <a class="btn btn-primary" href="../layouts/index.html">Go back to Layouts</a>
+          </div>
+          <!-- End Title -->
+        </div>
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Welcome Message -->
+  <div class="modal fade" id="welcomeMessageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-close">
+          <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi-x-lg"></i>
+          </button>
+        </div>
+        <!-- End Header -->
+
+        <!-- Body -->
+        <div class="modal-body p-sm-5">
+          <div class="text-center">
+            <div class="w-75 w-sm-50 mx-auto mb-4">
+              <img class="img-fluid" src="../assets/svg/illustrations/oc-collaboration.svg" alt="Image Description" data-hs-theme-appearance="default">
+              <img class="img-fluid" src="../assets/svg/illustrations-light/oc-collaboration.svg" alt="Image Description" data-hs-theme-appearance="dark">
+            </div>
+
+            <h4 class="h1">Welcome to Front</h4>
+
+            <p>We're happy to see you in our community.</p>
+          </div>
+        </div>
+        <!-- End Body -->
+
+        <!-- Footer -->
+        <div class="modal-footer d-block text-center py-sm-5">
+          <small class="text-cap text-muted">Trusted by the world's best teams</small>
+
+          <div class="w-85 mx-auto">
+            <div class="row justify-content-between">
+              <div class="col">
+                <img class="img-fluid" src="../assets/svg/brands/gitlab-gray.svg" alt="Image Description">
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="../assets/svg/brands/fitbit-gray.svg" alt="Image Description">
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="../assets/svg/brands/flow-xo-gray.svg" alt="Image Description">
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="../assets/svg/brands/layar-gray.svg" alt="Image Description">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Footer -->
+      </div>
+    </div>
+  </div>
+
+  <!-- End Welcome Message -->
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- JS Global Compulsory  -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="../assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../assets/js/theme.min.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      
+
+      // INITIALIZATION OF NAVBAR VERTICAL ASIDE
+      // =======================================================
+      new HSSideNav('.js-navbar-vertical-aside').init()
+
+
+      // INITIALIZATION OF BOOTSTRAP DROPDOWN
+      // =======================================================
+      HSBsDropdown.init()
+    })()
+  </script>
+
+  <!-- Style Switcher JS -->
+
+  <script>
+      (function () {
+        // STYLE SWITCHER
+        // =======================================================
+        const $dropdownBtn = document.getElementById('selectThemeDropdown') // Dropdowon trigger
+        const $variants = document.querySelectorAll(`[aria-labelledby="selectThemeDropdown"] [data-icon]`) // All items of the dropdown
+
+        // Function to set active style in the dorpdown menu and set icon for dropdown trigger
+        const setActiveStyle = function () {
+          $variants.forEach($item => {
+            if ($item.getAttribute('data-value') === HSThemeAppearance.getOriginalAppearance()) {
+              $dropdownBtn.innerHTML = `<i class="${$item.getAttribute('data-icon')}" />`
+              return $item.classList.add('active')
+            }
+
+            $item.classList.remove('active')
+          })
+        }
+
+        // Add a click event to all items of the dropdown to set the style
+        $variants.forEach(function ($item) {
+          $item.addEventListener('click', function () {
+            HSThemeAppearance.setAppearance($item.getAttribute('data-value'))
+          })
+        })
+
+        // Call the setActiveStyle on load page
+        setActiveStyle()
+
+        // Add event listener on change style to call the setActiveStyle function
+        window.addEventListener('on-hs-appearance-change', function () {
+          setActiveStyle()
+        })
+      })()
+    </script>
+
+  <!-- End Style Switcher JS -->
+</body>
+</html>

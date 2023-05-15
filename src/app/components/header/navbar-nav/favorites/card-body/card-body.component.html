@@ -1,0 +1,23 @@
+<div class="card-body card-body-height">
+  <ng-container *ngFor="let element of favBody">
+    <a class="dropdown-item" href="#">
+      <div class="d-flex align-items-center">
+        <div class="flex-shrink-0">
+          <img *ngIf="element.image; else elseBlock" class="avatar avatar-xs avatar-4x3" src={{element.image}}
+            alt={{element.alt}}>
+        </div>
+        <div class="flex-grow-1 text-truncate ms-3">
+          <h5 class="mb-0">{{element.title}} <span *ngIf=element.badge
+              class="badge bg-primary rounded-pill text-uppercase ms-1">{{element.badge}}</span></h5>
+          <p class="card-text text-body">{{element.content}}</p>
+        </div>
+      </div>
+    </a>
+  </ng-container>
+</div>
+
+<ng-template #elseBlock>
+  <div class="avatar avatar-sm avatar-soft-dark">
+    <span class="avatar-initials"><i class="bi-grid"></i></span>
+  </div>
+</ng-template>
