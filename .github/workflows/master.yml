@@ -1,0 +1,41 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js default CI/CD
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    # can on GitHub infrastructure if set to ubuntu-latest and our own infrastructure if set to self-hosted
+    runs-on: dev-instance
+    # steps for continuous integration
+    steps:
+      - name: clone-this-repo
+        # to clone use actions GitHub account checkout repo release tag v3
+        uses: actions/checkout@v3
+      - name: setup-node-js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: install-node-modules
+        run: npm i
+#      - name: auto-format-code
+#        run: npm run format
+#      - name: commit-and-push
+#        uses: EndBug/add-and-commit@v9
+#        with:
+#         default_author: github_actions
+	  script: |
+          cd /home/ubuntu/SDR/MyWebOneAngular
+          git pull origin main
+          git status
+          #npm install --only=prod
+          #npm install 
+	  pm2 restart server.js
+          ng build
+
